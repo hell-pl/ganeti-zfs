@@ -1,0 +1,3 @@
+zfs	where to create instance zfs volumes
+create	zfs create -V options
+destroy	zfs destroy options
