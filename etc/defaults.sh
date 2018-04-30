@@ -11,7 +11,9 @@ test -r "$host_config" && . "$host_config"
 test -n "${EXTP_ZFS+x}" || EXTP_ZFS="zfs/vm" 
 
 # parameters for zfs create
-# -b 4k	block size sutable for ext4 filesystem
+# -b 4k	block size suitable for ext4 filesystem
+#       but benchmark it for yourself:
+#       https://github.com/zfsonlinux/zfs/issues/824
 # lz4	compression with low cpu overhead
 #
 # If you want sparse provisioning add the "-s" flag.
