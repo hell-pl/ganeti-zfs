@@ -2,7 +2,10 @@
 
 . /usr/share/ganeti/extstorage/zfs/defaults.sh
 
-test -e "/dev/zvol/$EXTP_ZFS/$VOL_NAME" || exit 1
+if ! test -e "/dev/zvol/$EXTP_ZFS/$VOL_NAME"; then
+  echo "/dev/zvol/$EXTP_ZFS/$VOL_NAME does not exist on $(hostname)"
+  exit 1
+fi
 
 # Return path to blockdevice
 echo -n "/dev/zvol/$EXTP_ZFS/$VOL_NAME"
