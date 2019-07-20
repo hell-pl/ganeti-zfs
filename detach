@@ -1,3 +1,5 @@
-#!/bin/sh -e
+#!/usr/bin/env bash
+
+set -e
 
 exit 0

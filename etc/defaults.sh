@@ -4,11 +4,11 @@
 
 dir=/usr/share/ganeti/extstorage/zfs/
 
-host_config="$dir/etc/`hostname -s`.sh"
-test -r "$host_config" && . "$host_config"
+host_config="$dir/etc/$(hostname -s).sh"
+test -r "${host_config}" && . "${host_config}"
 
 # Parent for zvols
-test -n "${EXTP_ZFS+x}" || EXTP_ZFS="zfs/vm" 
+: ${EXTP_ZFS:="rpool"}
 
 # parameters for zfs create
 # -b 4k	block size suitable for ext4 filesystem
@@ -21,7 +21,7 @@ test -n "${EXTP_ZFS+x}" || EXTP_ZFS="zfs/vm"
 # You can however easily switch any volume to sparse by setting
 # its reservation to zero, or non-sparse by settings its
 # reservation to volsize.
-test -n "${EXTP_CREATE+x}" || EXTP_CREATE="-b 4k -o compression=lz4"
+: ${EXTP_CREATE:="-b 4k -o compression=lz4"}
 
 # on zfs destroy remove dependent snapshots
-test -n "${EXTP_DESTROY+x}" || EXTP_DESTROY="-R"
+: ${EXTP_DESTROY:="-R"}

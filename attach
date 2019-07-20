@@ -1,4 +1,6 @@
-#!/bin/sh -e
+#!/usr/bin/env bash
+
+set -e
 
 . /usr/share/ganeti/extstorage/zfs/defaults.sh
 
