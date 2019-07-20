@@ -2,7 +2,7 @@
 
 set -e
 
-. /usr/share/ganeti/extstorage/zfs/defaults.sh
+. /srv/ganeti/extstorage/zfs/defaults.sh
 
 test -e "/dev/zvol/$EXTP_ZFS/$VOL_NAME" && exit 0
 

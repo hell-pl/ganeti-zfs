@@ -2,7 +2,7 @@
 #set -x
 #set >&2
 
-dir=/usr/share/ganeti/extstorage/zfs/
+dir=/srv/ganeti/extstorage/zfs/
 
 host_config="$dir/etc/$(hostname -s).sh"
 test -r "${host_config}" && . "${host_config}"

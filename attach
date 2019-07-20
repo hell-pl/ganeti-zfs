@@ -2,7 +2,7 @@
 
 set -e
 
-. /usr/share/ganeti/extstorage/zfs/defaults.sh
+. /srv/ganeti/extstorage/zfs/defaults.sh
 
 if ! test -e "/dev/zvol/$EXTP_ZFS/$VOL_NAME"; then
   echo "/dev/zvol/$EXTP_ZFS/$VOL_NAME does not exist on $(hostname)"
